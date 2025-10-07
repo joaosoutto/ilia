@@ -17,6 +17,8 @@ export const MainContentWrapper = styled(Box)(
     flex: 1,
     display: "flex",
     backgroundColor: palette.branded.lightBg,
+    background: `linear-gradient(180deg, ${palette.galactic.space} 40%, ${palette.galactic.nebula} 80%)`,
+
     padding: isMobile
       ? theme.spacing(1)
       : `${theme.spacing(2)} ${theme.spacing(8)}`,

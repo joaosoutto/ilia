@@ -5,6 +5,7 @@ import { useDebounce } from "../../../hooks/useDebounce";
 import SearchInput from "../searchInput";
 import { DataGrid } from "../dataGrid";
 import Pagination from "../pagination";
+import { PlanetWithFilms } from "../../../types/planets";
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -28,7 +29,12 @@ const Home = () => {
       />
 
       <DataGrid
-        results={planetsResponse?.results || []}
+        results={
+          planetsResponse?.results?.sort(
+            (a: PlanetWithFilms, b: PlanetWithFilms) =>
+              a.name.localeCompare(b.name)
+          ) || []
+        }
         isLoading={isLoading}
       />
 
