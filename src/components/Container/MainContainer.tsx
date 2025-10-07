@@ -1,7 +1,7 @@
 import React from "react";
 import { CommonContainerProps } from "./types";
-import { useIsMobile } from "../../../hooks/useDimensions";
 import { MainContainerWrapper } from "./styles";
+import { useIsMobile } from "../../../hooks/useDimensions";
 
 const MainContainer = ({ children }: CommonContainerProps) => {
   const isMobile = useIsMobile();

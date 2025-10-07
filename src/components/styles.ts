@@ -9,14 +9,17 @@ export const MainLayoutWrapper = styled(Box)(() => ({
   maxHeight: "100vh",
   height: "100vh",
   width: "100%",
-  backgroundColor: palette.branded.darkGray,
   overflow: "hidden",
 }));
 
-export const MainContentWrapper = styled(Box)(() => ({
-  flex: 1,
-  display: "flex",
-  backgroundColor: palette.branded.lightBg,
-  padding: theme.spacing(2),
-  overflow: "auto",
-}));
+export const MainContentWrapper = styled(Box)(
+  ({ isMobile }: { isMobile: boolean }) => ({
+    flex: 1,
+    display: "flex",
+    backgroundColor: palette.branded.lightBg,
+    padding: isMobile
+      ? theme.spacing(1)
+      : `${theme.spacing(2)} ${theme.spacing(8)}`,
+    overflow: "auto",
+  })
+);

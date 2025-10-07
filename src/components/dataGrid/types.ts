@@ -1,5 +1,6 @@
-import { Planet } from "../../../types/planets";
+import { PlanetWithFilms } from "../../../types/planets";
 
 export interface DataGridProps {
-  results: Planet[] | undefined;
+  results: PlanetWithFilms[] | undefined;
+  isLoading: boolean;
 }

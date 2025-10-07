@@ -31,7 +31,6 @@ const SearchInput = ({
     <TextField
       variant="outlined"
       placeholder={placeholder}
-      size="small"
       fullWidth
       disabled={isLoading}
       InputProps={{

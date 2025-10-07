@@ -3,6 +3,7 @@ import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
 import { theme } from "../../../theme/theme";
+import CardContent from "@mui/material/CardContent";
 
 export const PlanetCardWrapper = styled(Card)<{ climateColor: string }>(
   ({ climateColor }) => ({
@@ -11,6 +12,7 @@ export const PlanetCardWrapper = styled(Card)<{ climateColor: string }>(
     position: "relative",
     transition: "all 0.4s ease",
     minHeight: "300px",
+    maxHeight: "300px",
     "&:hover": {
       cursor: "pointer",
       boxShadow: `
@@ -35,7 +37,7 @@ export const PlanetCardWrapper = styled(Card)<{ climateColor: string }>(
 export const PlanetCardContainer = styled(Box)(
   ({ climateColor }: { climateColor: string }) => ({
     position: "absolute",
-    top: theme.spacing(2),
+    top: theme.spacing(1),
     right: theme.spacing(1),
     zIndex: 2,
     borderRadius: "50%",
@@ -66,3 +68,13 @@ export const IconWrapper = styled(Box)(
     justifyContent: "center",
   })
 );
+
+export const PlanetCardContent = styled(CardContent)(() => ({
+  flex: 1,
+  height: "100%",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  alignItems: "flex-start",
+  padding: "24px 16px",
+}));

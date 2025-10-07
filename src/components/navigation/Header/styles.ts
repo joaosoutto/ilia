@@ -17,12 +17,3 @@ export const RouterSection = styled(Box)({
   gap: theme.spacing(1.5),
   cursor: "pointer",
 });
-
-export const StarsWrapper = styled(Box)(
-  ({ isMobile }: { isMobile: boolean }) => ({
-    position: "relative",
-    width: isMobile ? "30vw" : "70vw",
-    height: "60px",
-    overflow: "hidden",
-  })
-);

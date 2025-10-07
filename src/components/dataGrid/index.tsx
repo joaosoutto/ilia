@@ -1,22 +1,30 @@
-import Box from "@mui/material/Box";
 import { DataGridProps } from "./types";
 
 import { PlanetCard } from "../planetCard";
+import { DataGridWrapper } from "./styles";
+import NoResults from "./NoResults";
+import GridLoader from "./GridLoader";
+import { useIsMobile, useIsTablet } from "../../../hooks/useDimensions";
 
-export const DataGrid = ({ results }: DataGridProps) => {
+export const DataGrid = ({ results, isLoading }: DataGridProps) => {
+  const isMobile = useIsMobile();
+  const isTablet = useIsTablet();
+
+  const isSmallScreen = isMobile || isTablet;
+
+  if (isLoading) {
+    return <GridLoader />;
+  }
+
+  if (!isLoading && results?.length === 0) {
+    return <NoResults />;
+  }
+
   return (
-    <Box
-      style={{
-        width: "100%",
-        display: "grid",
-        gridTemplateColumns: "repeat(5, 1fr)",
-        gap: "20px",
-        // border: `1px solid ${palette.primary.main}`,
-      }}
-    >
+    <DataGridWrapper isMobile={isSmallScreen}>
       {results?.map((result) => {
         return <PlanetCard key={result.name} result={result} />;
       })}
-    </Box>
+    </DataGridWrapper>
   );
 };

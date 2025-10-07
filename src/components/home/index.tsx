@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MainContainer from "../Container/MainContainer";
 import usePlanets from "../../../query/planets/usePlanets";
-import Button from "@mui/material/Button";
 import { useDebounce } from "../../../hooks/useDebounce";
 import SearchInput from "../searchInput";
 import { DataGrid } from "../dataGrid";
-import { LoaderGrid } from "../dataGrid/LoaderGrid";
-import NoResults from "../dataGrid/NoResults";
+import Pagination from "../pagination";
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -15,6 +13,10 @@ const Home = () => {
   const { planetsResponse, isLoading, fetchPage, currentPage } = usePlanets({
     search: debouncedSearchTerm,
   });
+
+  useEffect(() => {
+    fetchPage(1);
+  }, [debouncedSearchTerm]);
 
   return (
     <MainContainer>
@@ -25,20 +27,18 @@ const Home = () => {
         isLoading={isLoading}
       />
 
-      {isLoading && <LoaderGrid />}
+      <DataGrid
+        results={planetsResponse?.results || []}
+        isLoading={isLoading}
+      />
 
-      {!isLoading &&
-        planetsResponse?.results &&
-        planetsResponse.results.length === 0 && <NoResults />}
-
-      {!isLoading &&
-        planetsResponse?.results &&
-        planetsResponse.results.length > 0 && (
-          <DataGrid results={planetsResponse.results} />
-        )}
-
-      <Button onClick={() => fetchPage(currentPage + 1)}>Next</Button>
-      <Button onClick={() => fetchPage(currentPage - 1)}>Previous</Button>
+      <Pagination
+        currentPage={currentPage}
+        totalItems={planetsResponse?.count || 0}
+        itemsPerPage={10}
+        onPageChange={fetchPage}
+        isLoading={isLoading}
+      />
     </MainContainer>
   );
 };

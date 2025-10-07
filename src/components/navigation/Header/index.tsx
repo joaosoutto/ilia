@@ -7,7 +7,7 @@ import DarthVaderIcon from "@/assets/svgs/DarthVaderIcon";
 import { HeaderWrapper, RouterSection } from "./styles";
 import { useRouter } from "next/navigation";
 import { theme } from "../../../../theme/theme";
-import Stars from "./Stars";
+import Stars from "../../ui/stars/Stars";
 
 const Header = () => {
   const isMobile = useIsMobile();
@@ -17,7 +17,7 @@ const Header = () => {
       position="static"
       elevation={0}
       sx={{
-        backgroundColor: palette.branded.mainBg,
+        background: `linear-gradient(135deg, ${palette.galactic.space} 50%, ${palette.galactic.nebula} 100%)`,
         padding: theme.spacing(1),
       }}
     >
