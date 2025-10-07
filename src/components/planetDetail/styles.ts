@@ -10,7 +10,10 @@ export const PlanetDetailContainer = styled(Box)(
   ({ isMobile }: { isMobile: boolean }) => ({
     width: "100%",
     padding: isMobile ? theme.spacing(3) : theme.spacing(3, 32),
-    position: "relative",
+    height: "100%",
+    flex: 1,
+    maxHeight: "100%",
+    overflow: "auto",
   })
 );
 

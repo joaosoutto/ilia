@@ -20,6 +20,5 @@ export const MainContainerWrapper = styled(Stack)(
     alignItems: "center",
     gap: isMobile ? theme.spacing(1) : theme.spacing(2),
     padding: isMobile ? theme.spacing(0) : theme.spacing(2, 0),
-    // border: "3px solid purple",
   })
 );
