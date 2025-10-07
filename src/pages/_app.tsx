@@ -5,7 +5,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Head from "next/head";
 
-import Layout from "../components/layout";
+import Layout from "../components/layouts/layout";
 import { Box } from "@mui/material";
 import { palette } from "../../theme/palette";
 

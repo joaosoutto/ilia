@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
-import { palette } from "../../theme/palette";
-import { theme } from "../../theme/theme";
+import { palette } from "../../../theme/palette";
+import { theme } from "../../../theme/theme";
 
 export const MainLayoutWrapper = styled(Box)(() => ({
   display: "flex",

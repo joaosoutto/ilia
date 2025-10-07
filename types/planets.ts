@@ -69,6 +69,8 @@ export interface Resident {
   created: string;
   edited: string;
   url: string;
+  speciesDetails?: Species[];
+  vehicleDetails?: Vehicle[];
 }
 
 export interface ResidentWithDetails extends Resident {

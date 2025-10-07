@@ -38,8 +38,6 @@ const Pagination: React.FC<PaginationProps> = ({
 
   const isSmallScreen = isMobile || isTablet;
 
-  // console.log(totalPages);
-
   return (
     <PaginationContainer isMobile={isMobile}>
       {isLoading ? (

@@ -40,3 +40,9 @@ export const extractId = (url: string) => {
   const id = url?.replace(/\/$/, "").split("/").pop();
   return id;
 };
+
+export const formatValue = (value: string | undefined, unit?: string) => {
+  if (value === "unknown" || value === "N/A") return "Unknown";
+  if (unit) return `${Number(value).toLocaleString()} ${unit}`;
+  return value;
+};
