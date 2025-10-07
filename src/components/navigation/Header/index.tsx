@@ -1,0 +1,40 @@
+import React from "react";
+import { AppBar, Typography } from "@mui/material";
+import { palette } from "../../../../theme/palette";
+import { useIsMobile } from "../../../../hooks/useDimensions";
+import DarthVaderIcon from "@/assets/svgs/DarthVaderIcon";
+import { HeaderWrapper, RouterSection } from "./styles";
+import { useRouter } from "next/router";
+import { theme } from "../../../../theme/theme";
+import Stars from "./Stars";
+
+const Header = () => {
+  const isMobile = useIsMobile();
+  const router = useRouter();
+  return (
+    <AppBar
+      position="static"
+      elevation={0}
+      sx={{
+        backgroundColor: palette.branded.mainBg,
+        padding: theme.spacing(1),
+      }}
+    >
+      <HeaderWrapper>
+        <RouterSection onClick={() => router.push("/")}>
+          <DarthVaderIcon
+            width={isMobile ? "34px" : "42px"}
+            height={isMobile ? "34px" : "42px"}
+            color={palette.galactic.stars}
+          />
+          <Typography variant="h5" color={palette.galactic.stars}>
+            SW Planets
+          </Typography>
+        </RouterSection>
+        <Stars count={isMobile ? 20 : 40} isMobile={isMobile} />
+      </HeaderWrapper>
+    </AppBar>
+  );
+};
+
+export default Header;

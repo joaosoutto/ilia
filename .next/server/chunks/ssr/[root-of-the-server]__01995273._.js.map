@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 5, "column": 0}, "map": {"version":3,"sources":["file:///home/soutto/Soutto/Development/ilia/src/pages/index.tsx"],"sourcesContent":["import React from \"react\";\nimport Home from \"../components/Home\";\n\nconst HomePage = () => {\n  return <Home />;\n};\n\nexport default HomePage;\n"],"names":[],"mappings":";;;;;;;;;;;AAGA,MAAM,WAAW;IACf,qBAAO,qKAAC;;;;;AACV;uCAEe","debugId":null}}]
+}
