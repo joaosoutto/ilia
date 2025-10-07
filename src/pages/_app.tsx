@@ -26,7 +26,7 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <Box>
       <Head>
-        <title>React Boilerplate</title>
+        <title>SW Planets</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

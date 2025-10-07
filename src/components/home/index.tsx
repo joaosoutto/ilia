@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import MainContainer from "../Container/MainContainer";
 import usePlanets from "../../../query/planets/usePlanets";
-import { Button } from "@mui/material";
+import Button from "@mui/material/Button";
 import { useDebounce } from "../../../hooks/useDebounce";
 import SearchInput from "../searchInput";
 import { DataGrid } from "../dataGrid";

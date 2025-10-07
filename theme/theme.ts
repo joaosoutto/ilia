@@ -1,8 +1,8 @@
-import { createTheme as createMuiTheme } from "@mui/material";
+import { createTheme as createTheme } from "@mui/material/styles";
 import { palette } from "./palette";
 import { typography } from "./typography";
 
-export const theme = createMuiTheme({
+export const theme = createTheme({
   palette,
   typography,
 });

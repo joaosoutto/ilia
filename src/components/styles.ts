@@ -1,4 +1,5 @@
-import { Box, styled } from "@mui/material";
+import Box from "@mui/material/Box";
+import { styled } from "@mui/material/styles";
 import { palette } from "../../theme/palette";
 import { theme } from "../../theme/theme";
 

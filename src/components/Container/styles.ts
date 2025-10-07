@@ -1,4 +1,6 @@
-import { styled, Stack, Container } from "@mui/material";
+import Stack from "@mui/material/Stack";
+import Container from "@mui/material/Container";
+import { styled } from "@mui/material/styles";
 import { theme } from "../../../theme/theme";
 
 export const NoContentWrapper = styled(Stack)(() => ({

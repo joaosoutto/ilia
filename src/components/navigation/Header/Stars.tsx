@@ -1,6 +1,7 @@
 import React from "react";
-import { Box } from "@mui/material";
+import Box from "@mui/material/Box";
 import { palette } from "../../../../theme/palette";
+import { StarsWrapper } from "./styles";
 
 interface StarsProps {
   count?: number;
@@ -11,11 +12,11 @@ const Stars: React.FC<StarsProps> = ({ count = 40, isMobile = false }) => {
   const generateStars = () => {
     const stars = [];
     for (let i = 0; i < count; i++) {
-      const size = Math.random() * 4 + 1; // Random size between 1-5px
-      const left = Math.random() * 100; // Random horizontal position
-      const top = Math.random() * 100; // Random vertical position
-      const opacity = Math.random() * 0.6 + 0.4; // Random opacity between 0.4-1
-      
+      const size = Math.random() * 5 + 1;
+      const left = Math.random() * 100;
+      const top = Math.random() * 100;
+      const opacity = Math.random() * 0.6 + 0.4;
+
       stars.push(
         <Box
           key={i}
@@ -35,18 +36,7 @@ const Stars: React.FC<StarsProps> = ({ count = 40, isMobile = false }) => {
     return stars;
   };
 
-  return (
-    <Box
-      sx={{
-        position: "relative",
-        width: isMobile ? "30vw" : "50vw",
-        height: "60px",
-        overflow: "hidden",
-      }}
-    >
-      {generateStars()}
-    </Box>
-  );
+  return <StarsWrapper isMobile={isMobile}>{generateStars()}</StarsWrapper>;
 };
 
 export default Stars;

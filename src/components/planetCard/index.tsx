@@ -1,10 +1,12 @@
-import { Box, CardContent, Stack } from "@mui/material";
+import Box from "@mui/material/Box";
+import CardContent from "@mui/material/CardContent";
+import Stack from "@mui/material/Stack";
 import { Planet } from "../../../types/planets";
 import { getClimateBackground, getClimateColor } from "@/utils/planets";
 import PublicOutlinedIcon from "@mui/icons-material/PublicOutlined";
-import TerrainIcon from "@mui/icons-material/Terrain";
-import WbSunnyIcon from "@mui/icons-material/WbSunny";
-import SatelliteIcon from "@mui/icons-material/Satellite";
+import TerrainOutlinedIcon from "@mui/icons-material/TerrainOutlined";
+import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
+import SatelliteAltOutlinedIcon from "@mui/icons-material/SatelliteAltOutlined";
 import {
   PlanetCardContainer,
   PlanetCardName,
@@ -47,13 +49,13 @@ export const PlanetCard = ({ result }: { result: Planet }) => {
         <Box sx={{ position: "relative", zIndex: 2 }}>
           <Stack spacing={2}>
             <PlanetCardRow
-              icon={<TerrainIcon sx={IconStyles} />}
+              icon={<TerrainOutlinedIcon sx={IconStyles} />}
               label="Terrain"
               value={result.terrain}
               climateColor={climateColor}
             />
             <PlanetCardRow
-              icon={<SatelliteIcon sx={IconStyles} />}
+              icon={<SatelliteAltOutlinedIcon sx={IconStyles} />}
               label="Diameter"
               value={
                 result.diameter === "unknown"
@@ -64,7 +66,7 @@ export const PlanetCard = ({ result }: { result: Planet }) => {
             />
 
             <PlanetCardRow
-              icon={<WbSunnyIcon sx={IconStyles} />}
+              icon={<WbSunnyOutlinedIcon sx={IconStyles} />}
               label="Climate"
               value={result.climate}
               climateColor={climateColor}

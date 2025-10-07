@@ -1,8 +1,11 @@
-import { Box, Card, styled, Typography } from "@mui/material";
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import Typography from "@mui/material/Typography";
+import { styled } from "@mui/material/styles";
 import { theme } from "../../../theme/theme";
 
-export const PlanetCardWrapper = styled(Card)(
-  ({ climateColor }: { climateColor: string }) => ({
+export const PlanetCardWrapper = styled(Card)<{ climateColor: string }>(
+  ({ climateColor }) => ({
     border: `1px solid ${climateColor}30`,
     borderRadius: theme.spacing(2),
     position: "relative",

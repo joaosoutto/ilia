@@ -1,4 +1,6 @@
-import { styled, Toolbar, Box } from "@mui/material";
+import Toolbar from "@mui/material/Toolbar";
+import Box from "@mui/material/Box";
+import { styled } from "@mui/material/styles";
 import { theme } from "../../../../theme/theme";
 
 export const HeaderWrapper = styled(Toolbar)(() => ({
@@ -15,3 +17,12 @@ export const RouterSection = styled(Box)({
   gap: theme.spacing(1),
   cursor: "pointer",
 });
+
+export const StarsWrapper = styled(Box)(
+  ({ isMobile }: { isMobile: boolean }) => ({
+    position: "relative",
+    width: isMobile ? "30vw" : "50vw",
+    height: "60px",
+    overflow: "hidden",
+  })
+);

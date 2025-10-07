@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-import { useQuery } from "@tanstack/react-query";
 import { PlanetsListParams, PlanetsListResponse } from "../../services/types";
 import PlanetsApi from "../../services/planets";
 import { QUERY_KEYS } from "../constants";
 import { AxiosResponse } from "axios";
 import { Planet } from "../../types/planets";
+import { useQuery } from "@tanstack/react-query";
 
 const usePlanets = (params?: PlanetsListParams) => {
   const [currentPage, setCurrentPage] = useState(1);

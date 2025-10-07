@@ -1,10 +1,11 @@
 import React from "react";
-import { AppBar, Typography } from "@mui/material";
+import AppBar from "@mui/material/AppBar";
+import Typography from "@mui/material/Typography";
 import { palette } from "../../../../theme/palette";
 import { useIsMobile } from "../../../../hooks/useDimensions";
 import DarthVaderIcon from "@/assets/svgs/DarthVaderIcon";
 import { HeaderWrapper, RouterSection } from "./styles";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { theme } from "../../../../theme/theme";
 import Stars from "./Stars";
 

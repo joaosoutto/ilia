@@ -1,4 +1,5 @@
-import { Box, Typography } from "@mui/material";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 import { IconWrapper } from "./styles";
 import { palette } from "../../../theme/palette";
 import { PlanetCardRowProps } from "./types";

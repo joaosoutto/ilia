@@ -1,6 +1,6 @@
 import React from "react";
 import { useIsMobile, useIsTablet } from "../../../hooks/useDimensions";
-import { Box } from "@mui/material";
+import Box from "@mui/material/Box";
 
 const GridContainer = ({
   children,

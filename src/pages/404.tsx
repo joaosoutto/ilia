@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography } from "@mui/material";
+import Typography from "@mui/material/Typography";
 import { palette } from "../../theme/palette";
 import { NotFound as NotFoundIcon } from "@/assets/svgs/NotFound";
 import NoContentContainer from "@/components/Container/NoContentContainer";

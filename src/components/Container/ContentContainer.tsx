@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "@mui/material";
+import Box from "@mui/material/Box";
 import { useIsMobile, useIsTablet } from "../../../hooks/useDimensions";
 
 const ContentContainer = ({ children }: { children: React.ReactNode }) => {

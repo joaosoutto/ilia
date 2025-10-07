@@ -1,4 +1,6 @@
-import { CircularProgress, IconButton, TextField } from "@mui/material";
+import CircularProgress from "@mui/material/CircularProgress";
+import IconButton from "@mui/material/IconButton";
+import TextField from "@mui/material/TextField";
 import CloseIcon from "@mui/icons-material/Close";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 
