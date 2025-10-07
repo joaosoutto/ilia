@@ -1,29 +1,30 @@
 import { PlanetClimate } from "../../contants/planets";
+import { palette } from "../../theme/palette";
 
 export function getClimateColor(climate: string): string {
   switch (climate) {
     case PlanetClimate.ARID:
-      return "#EDC988";
+      return palette.climates.arid;
     case PlanetClimate.TEMPERATE:
-      return "#88B04B";
+      return palette.climates.temperate;
     case "frozen":
-      return "#0066CC";
+      return palette.climates.frozen;
     case PlanetClimate.MURKY:
-      return "#8B4513";
+      return palette.climates.murky;
     case PlanetClimate.HOT:
-      return "#FF5733";
+      return palette.climates.hot;
     case PlanetClimate.TROPICAL:
-      return "#29B6F6";
+      return palette.climates.tropical;
     case PlanetClimate.POLLUTED:
-      return "#FF6B35";
+      return palette.climates.polluted;
     case PlanetClimate.UNKNOWN:
-      return "#BDBDBD";
+      return palette.climates.unknown;
     case PlanetClimate.SUPERHEATED:
-      return "#FF1744";
+      return palette.climates.superheated;
     case PlanetClimate.FROZEN:
-      return "#0066CC";
+      return palette.climates.frozen;
     default:
-      return "#88B04B";
+      return palette.climates.temperate;
   }
 }
 
@@ -33,4 +34,9 @@ export const getClimateBackground = (color: string) => {
             radial-gradient(circle at 80% 20%, ${color}10 0%, transparent 60%),
             linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f1f3f4 100%)
           `;
+};
+
+export const extractId = (url: string) => {
+  const id = url?.replace(/\/$/, "").split("/").pop();
+  return id;
 };

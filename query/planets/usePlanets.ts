@@ -1,6 +1,9 @@
 import { useState } from "react";
 
-import { PlanetsListParams, PlanetsListResponseWithFilms } from "../../services/types";
+import {
+  PlanetsListParams,
+  PlanetsListResponseWithFilms,
+} from "../../services/types";
 import PlanetsApi from "../../services/planets";
 import { QUERY_KEYS } from "../constants";
 import { useQuery } from "@tanstack/react-query";
@@ -21,10 +24,12 @@ const usePlanets = (params?: PlanetsListParams) => {
         page: currentPage,
       });
 
-      // Fetch film details for each planet
+      // Fetch film and resident details for each planet
       const planetsWithFilms = await Promise.all(
         response.data.results.map(async (planet: Planet) => {
-          const filmDetails = await PlanetsApi.getFilmsDetails(planet.films);
+          const [filmDetails] = await Promise.all([
+            PlanetsApi.getFilmsDetails(planet.films),
+          ]);
           return {
             ...planet,
             filmDetails,

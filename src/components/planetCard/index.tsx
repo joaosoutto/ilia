@@ -1,7 +1,11 @@
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import { PlanetWithFilms } from "../../../types/planets";
-import { getClimateBackground, getClimateColor } from "@/utils/planets";
+import {
+  extractId,
+  getClimateBackground,
+  getClimateColor,
+} from "@/utils/planets";
 import PublicOutlinedIcon from "@mui/icons-material/PublicOutlined";
 import TerrainOutlinedIcon from "@mui/icons-material/TerrainOutlined";
 import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
@@ -14,9 +18,10 @@ import {
   PlanetCardWrapper,
 } from "./styles";
 import { PlanetCardRow } from "./PlanetCardRow";
+import { useRouter } from "next/navigation";
 
 export const PlanetCard = ({ result }: { result: PlanetWithFilms }) => {
-  console.log(result);
+  const router = useRouter();
   const primaryClimate = result.climate.split(",")[0].trim();
   const climateColor = getClimateColor(primaryClimate);
 
@@ -31,6 +36,9 @@ export const PlanetCard = ({ result }: { result: PlanetWithFilms }) => {
       climateColor={climateColor}
       sx={{
         background: getClimateBackground(climateColor),
+      }}
+      onClick={() => {
+        router.push(`/planet/${extractId(result?.url)}`);
       }}
     >
       <PlanetCardContent>

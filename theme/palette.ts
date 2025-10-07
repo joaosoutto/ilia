@@ -19,6 +19,18 @@ export const palette = {
     yellow: "#FFE81F",
   },
 
+  climates: {
+    arid: "#EDC988",
+    temperate: "#88B04B",
+    frozen: "#0066CC",
+    murky: "#8B4513",
+    hot: "#FF5733",
+    tropical: "#29B6F6",
+    polluted: "#FF6B33",
+    unknown: "#BDBDBD",
+    superheated: "#FF1744",
+  },
+
   galactic: {
     space: "#000000",
     stars: "#FFFFFF",
