@@ -14,14 +14,14 @@ export const HeaderWrapper = styled(Toolbar)(() => ({
 export const RouterSection = styled(Box)({
   display: "flex",
   alignItems: "center",
-  gap: theme.spacing(1),
+  gap: theme.spacing(1.5),
   cursor: "pointer",
 });
 
 export const StarsWrapper = styled(Box)(
   ({ isMobile }: { isMobile: boolean }) => ({
     position: "relative",
-    width: isMobile ? "30vw" : "50vw",
+    width: isMobile ? "30vw" : "70vw",
     height: "60px",
     overflow: "hidden",
   })

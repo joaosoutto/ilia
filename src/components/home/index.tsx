@@ -5,6 +5,8 @@ import Button from "@mui/material/Button";
 import { useDebounce } from "../../../hooks/useDebounce";
 import SearchInput from "../searchInput";
 import { DataGrid } from "../dataGrid";
+import { LoaderGrid } from "../dataGrid/LoaderGrid";
+import NoResults from "../dataGrid/NoResults";
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -14,8 +16,6 @@ const Home = () => {
     search: debouncedSearchTerm,
   });
 
-  console.log(planetsResponse);
-  // console.log(isLoading, isFetching, isPending);
   return (
     <MainContainer>
       <SearchInput
@@ -24,7 +24,18 @@ const Home = () => {
         onChange={(e) => setSearchTerm(e)}
         isLoading={isLoading}
       />
-      <DataGrid results={planetsResponse?.results} />
+
+      {isLoading && <LoaderGrid />}
+
+      {!isLoading &&
+        planetsResponse?.results &&
+        planetsResponse.results.length === 0 && <NoResults />}
+
+      {!isLoading &&
+        planetsResponse?.results &&
+        planetsResponse.results.length > 0 && (
+          <DataGrid results={planetsResponse.results} />
+        )}
 
       <Button onClick={() => fetchPage(currentPage + 1)}>Next</Button>
       <Button onClick={() => fetchPage(currentPage - 1)}>Previous</Button>

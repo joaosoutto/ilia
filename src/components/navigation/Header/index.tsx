@@ -28,7 +28,11 @@ const Header = () => {
             height={isMobile ? "34px" : "42px"}
             color={palette.galactic.stars}
           />
-          <Typography variant="h5" color={palette.galactic.stars}>
+          <Typography
+            variant="h5"
+            fontWeight={600}
+            color={palette.galactic.stars}
+          >
             SW Planets
           </Typography>
         </RouterSection>
