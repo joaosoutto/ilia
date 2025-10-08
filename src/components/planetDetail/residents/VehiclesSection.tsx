@@ -16,19 +16,19 @@ const VehiclesSection = ({
   return (
     <>
       <SubsectionTitle climateColor={climateColor}>
-        <DirectionsCarOutlinedIcon sx={{ fontSize: 18, marginRight: 1 }} />
+        <DirectionsCarOutlinedIcon sx={{ fontSize: 18, marginRight: 1 }} data-testid="DirectionsCarOutlinedIcon" />
         Vehicles
       </SubsectionTitle>
-      <AdditionalInfoList>
+      <AdditionalInfoList data-testid="additional-info-list">
         {!resident?.vehicleDetails?.length && (
-          <AdditionalInfoItem climateColor={climateColor}>
+          <AdditionalInfoItem climateColor={climateColor} data-testid="additional-info-item">
             <AdditionalInfoName climateColor={climateColor}>
               No vehicles found
             </AdditionalInfoName>
           </AdditionalInfoItem>
         )}
         {resident.vehicleDetails?.map((vehicle) => (
-          <AdditionalInfoItem key={vehicle?.url} climateColor={climateColor}>
+          <AdditionalInfoItem key={vehicle?.url} climateColor={climateColor} data-testid="additional-info-item">
             <AdditionalInfoName climateColor={climateColor}>
               {vehicle?.name}
             </AdditionalInfoName>

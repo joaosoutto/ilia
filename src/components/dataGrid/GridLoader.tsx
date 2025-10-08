@@ -2,7 +2,7 @@ import Stars from "../ui/stars/Stars";
 import { LoaderContainer, SpinningPlanet, LoaderText } from "./styles";
 
 const GridLoader = ({ detail = false }) => (
-  <LoaderContainer>
+  <LoaderContainer data-testid="grid-loader">
     <SpinningPlanet />
     <LoaderText>Loading planet{detail ? " details" : "s"}...</LoaderText>
     <Stars count={10} isMobile={false} top={50} right={50} />

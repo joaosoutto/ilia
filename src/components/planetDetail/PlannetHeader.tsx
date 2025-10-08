@@ -17,20 +17,22 @@ const PlanetDetailHeader = ({
   return (
     <PlanetHeader
       climateColor={climateColor}
+      data-testid="planet-header"
       sx={{
         background: getClimateBackground(climateColor),
       }}
     >
-      <PlanetHeaderContent>
-        <PlanetHeaderIconWrapper climateColor={climateColor}>
+      <PlanetHeaderContent data-testid="planet-header-content">
+        <PlanetHeaderIconWrapper climateColor={climateColor} data-testid="planet-header-icon-wrapper">
           <PublicOutlinedIcon
+            data-testid="PublicOutlinedIcon"
             sx={{
               color: climateColor,
               fontSize: isMobile ? "32px" : "48px",
             }}
           />
         </PlanetHeaderIconWrapper>{" "}
-        <PlanetName isMobile={isMobile} climateColor={climateColor}>
+        <PlanetName isMobile={isMobile} climateColor={climateColor} data-testid="planet-name">
           {planetName}
         </PlanetName>
       </PlanetHeaderContent>

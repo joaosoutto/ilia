@@ -5,8 +5,8 @@ import { StatCard, StatCardContent, StatLabel, StatValue } from "../styles";
 import { StatRowProps } from "../types";
 
 const StatRow = ({ icon, label, value, climateColor }: StatRowProps) => (
-  <StatCard climateColor={climateColor}>
-    <StatCardContent>
+  <StatCard climateColor={climateColor} data-testid="stat-card">
+    <StatCardContent data-testid="stat-card-content">
       <Stack direction="row" spacing={2} alignItems="center">
         <Box
           sx={{ color: climateColor, display: "flex", alignItems: "center" }}
@@ -15,7 +15,7 @@ const StatRow = ({ icon, label, value, climateColor }: StatRowProps) => (
         </Box>
         <Box>
           <StatLabel>{label}</StatLabel>
-          <StatValue climateColor={climateColor}>{value}</StatValue>
+          <StatValue climateColor={climateColor} data-testid="stat-value">{value}</StatValue>
         </Box>
       </Stack>
     </StatCardContent>

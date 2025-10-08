@@ -10,7 +10,7 @@ const ResidentInfoRow = ({
   value,
   climateColor,
 }: ResidentInfoRowProps) => (
-  <Box sx={{ borderBottom: `1px solid ${climateColor}50` }}>
+  <Box sx={{ borderBottom: `1px solid ${climateColor}50` }} data-testid="resident-info-row">
     <Stack
       direction="row"
       spacing={1}
@@ -22,7 +22,7 @@ const ResidentInfoRow = ({
       </Box>
       <StatLabel>{label}</StatLabel>
     </Stack>
-    <StatValue climateColor={climateColor}>{value}</StatValue>
+    <StatValue climateColor={climateColor} data-testid="stat-value">{value}</StatValue>
   </Box>
 );
 

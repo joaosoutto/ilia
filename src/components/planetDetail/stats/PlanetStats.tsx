@@ -1,5 +1,4 @@
 import React from "react";
-import { PlanetWithFilms } from "../../../../types/planets";
 import { formatValue } from "@/utils/planets";
 import TerrainOutlinedIcon from "@mui/icons-material/TerrainOutlined";
 import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
@@ -57,7 +56,7 @@ const PlanetStats = ({ data, climateColor }: PlanetStatsProps) => {
   return (
     <>
       <SectionTitle climateColor={climateColor}>Planet Stats</SectionTitle>
-      <PlanetStatsGrid isMobile={isMobile}>
+      <PlanetStatsGrid isMobile={isMobile} data-testid="planet-stats-grid">
         {statRows.map((row) => (
           <StatRow
             key={row.label}

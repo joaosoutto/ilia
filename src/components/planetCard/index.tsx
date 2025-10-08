@@ -68,6 +68,7 @@ export const PlanetCard = ({ result }: { result: PlanetWithFilms }) => {
   return (
     <PlanetCardWrapper
       key={result.name}
+      data-testid="planet-card"
       climateColor={climateColor}
       sx={{
         background: getClimateBackground(climateColor),
@@ -79,6 +80,7 @@ export const PlanetCard = ({ result }: { result: PlanetWithFilms }) => {
       <PlanetCardContent>
         <PlanetCardContainer climateColor={climateColor}>
           <PublicOutlinedIcon
+            data-testid="planet-icon"
             sx={{
               color: climateColor,
               fontSize: "32px",

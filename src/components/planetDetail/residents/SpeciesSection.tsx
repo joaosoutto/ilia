@@ -16,19 +16,19 @@ const SpeciesSection = ({
   return (
     <>
       <SubsectionTitle climateColor={climateColor}>
-        <CategoryOutlinedIcon sx={{ fontSize: 18, marginRight: 1 }} />
+        <CategoryOutlinedIcon sx={{ fontSize: 18, marginRight: 1 }} data-testid="CategoryOutlinedIcon" />
         Species
       </SubsectionTitle>
-      <AdditionalInfoList>
+      <AdditionalInfoList data-testid="additional-info-list">
         {!resident?.speciesDetails?.length && (
-          <AdditionalInfoItem climateColor={climateColor}>
+          <AdditionalInfoItem climateColor={climateColor} data-testid="additional-info-item">
             <AdditionalInfoName climateColor={climateColor}>
               No species found
             </AdditionalInfoName>
           </AdditionalInfoItem>
         )}
         {resident?.speciesDetails?.map((species) => (
-          <AdditionalInfoItem key={species?.url} climateColor={climateColor}>
+          <AdditionalInfoItem key={species?.url} climateColor={climateColor} data-testid="additional-info-item">
             <AdditionalInfoName climateColor={climateColor}>
               {species?.name}
             </AdditionalInfoName>

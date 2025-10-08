@@ -28,6 +28,7 @@ const Stars = ({
           opacity={opacity}
           animationDuration={animationDuration}
           animationDelay={animationDelay}
+          data-testid="star-container"
         />
       );
     }
@@ -35,7 +36,7 @@ const Stars = ({
   };
 
   return (
-    <StarsWrapper top={top} right={right} isMobile={isMobile}>
+    <StarsWrapper top={top} right={right} isMobile={isMobile} data-testid="stars-wrapper">
       {generateStars()}
     </StarsWrapper>
   );

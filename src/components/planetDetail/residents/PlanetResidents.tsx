@@ -45,8 +45,8 @@ const PlanetResidents = ({
       </SectionTitle>
       <ResidentsGrid isMobile={isMobile}>
         {data?.residentDetails?.map((resident) => (
-          <ResidentCard key={resident.url} climateColor={climateColor}>
-            <ResidentCardContent>
+          <ResidentCard key={resident.url} climateColor={climateColor} data-testid="resident-card">
+            <ResidentCardContent data-testid="resident-card-content">
               <ResidentName climateColor={climateColor}>
                 {resident.name}
               </ResidentName>

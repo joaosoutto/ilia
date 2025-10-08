@@ -5,7 +5,7 @@ import { NoResultsWrapper, NoResultsIcon, NoResultsText } from "./styles";
 import Stars from "../ui/stars/Stars";
 
 const NoResults = () => (
-  <NoResultsWrapper>
+  <NoResultsWrapper data-testid="no-results">
     <NoResultsIcon>
       <PublicOffIcon sx={{ fontSize: 64 }} />
     </NoResultsIcon>

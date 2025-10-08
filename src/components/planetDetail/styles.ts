@@ -6,8 +6,10 @@ import { theme } from "../../../theme/theme";
 import CardContent from "@mui/material/CardContent";
 import Stack from "@mui/material/Stack";
 
-export const PlanetDetailContainer = styled(Box)(
-  ({ isMobile }: { isMobile: boolean }) => ({
+export const PlanetDetailContainer = styled(Box, {
+  shouldForwardProp: (prop) => prop !== 'isMobile',
+})<{ isMobile: boolean }>(
+  ({ isMobile }) => ({
     width: "100%",
     padding: isMobile ? theme.spacing(3) : theme.spacing(3, 32),
     height: "100%",
@@ -17,7 +19,9 @@ export const PlanetDetailContainer = styled(Box)(
   })
 );
 
-export const PlanetHeader = styled(Card)<{ climateColor: string }>(
+export const PlanetHeader = styled(Card, {
+  shouldForwardProp: (prop) => prop !== 'climateColor',
+})<{ climateColor: string }>(
   ({ climateColor }) => ({
     background: `linear-gradient(135deg, ${climateColor}15, ${climateColor}05)`,
     border: `2px solid ${climateColor}30`,
@@ -44,7 +48,9 @@ export const PlanetHeaderContent = styled(CardContent)(() => ({
   gap: theme.spacing(2),
 }));
 
-export const PlanetName = styled(Typography)<{
+export const PlanetName = styled(Typography, {
+  shouldForwardProp: (prop) => prop !== 'climateColor' && prop !== 'isMobile',
+})<{
   climateColor: string;
   isMobile: boolean;
 }>(({ climateColor, isMobile }) => ({
@@ -57,7 +63,9 @@ export const PlanetName = styled(Typography)<{
   letterSpacing: "0.5px",
 }));
 
-export const PlanetHeaderIconWrapper = styled(Box)<{ climateColor: string }>(
+export const PlanetHeaderIconWrapper = styled(Box, {
+  shouldForwardProp: (prop) => prop !== 'climateColor',
+})<{ climateColor: string }>(
   ({ climateColor }) => ({
     background: `linear-gradient(135deg, ${climateColor}20, ${climateColor}10)`,
     borderRadius: "50%",
@@ -69,7 +77,9 @@ export const PlanetHeaderIconWrapper = styled(Box)<{ climateColor: string }>(
   })
 );
 
-export const PlanetStatsGrid = styled(Box)<{ isMobile: boolean }>(
+export const PlanetStatsGrid = styled(Box, {
+  shouldForwardProp: (prop) => prop !== 'isMobile',
+})<{ isMobile: boolean }>(
   ({ isMobile }) => ({
     display: "grid",
     gridTemplateColumns: isMobile ? "repeat(2, 1fr)" : "repeat(4, 1fr)",
@@ -78,7 +88,9 @@ export const PlanetStatsGrid = styled(Box)<{ isMobile: boolean }>(
   })
 );
 
-export const StatCard = styled(Card)<{ climateColor: string }>(
+export const StatCard = styled(Card, {
+  shouldForwardProp: (prop) => prop !== 'climateColor',
+})<{ climateColor: string }>(
   ({ climateColor }) => ({
     background: `linear-gradient(135deg, ${climateColor}10, ${climateColor}10)`,
     border: `1px solid ${climateColor}`,
@@ -99,7 +111,9 @@ export const StatLabel = styled(Typography)(() => ({
   marginBottom: theme.spacing(0.5),
 }));
 
-export const StatValue = styled(Typography)<{ climateColor: string }>(
+export const StatValue = styled(Typography, {
+  shouldForwardProp: (prop) => prop !== 'climateColor',
+})<{ climateColor: string }>(
   ({ climateColor }) => ({
     fontSize: "18px",
     fontWeight: 700,
@@ -108,7 +122,9 @@ export const StatValue = styled(Typography)<{ climateColor: string }>(
   })
 );
 
-export const SectionTitle = styled(Typography)<{ climateColor: string }>(
+export const SectionTitle = styled(Typography, {
+  shouldForwardProp: (prop) => prop !== 'climateColor',
+})<{ climateColor: string }>(
   ({ climateColor }) => ({
     fontSize: "32px",
     fontWeight: 700,
@@ -129,15 +145,19 @@ export const SectionTitle = styled(Typography)<{ climateColor: string }>(
   })
 );
 
-export const ResidentsGrid = styled(Box)(
-  ({ isMobile }: { isMobile: boolean }) => ({
+export const ResidentsGrid = styled(Box, {
+  shouldForwardProp: (prop) => prop !== 'isMobile',
+})<{ isMobile: boolean }>(
+  ({ isMobile }) => ({
     display: "grid",
     gridTemplateColumns: isMobile ? "repeat(1, 1fr)" : "repeat(3, 1fr)",
     gap: theme.spacing(3),
   })
 );
 
-export const ResidentCard = styled(Card)<{ climateColor: string }>(
+export const ResidentCard = styled(Card, {
+  shouldForwardProp: (prop) => prop !== 'climateColor',
+})<{ climateColor: string }>(
   ({ climateColor }) => ({
     background: `linear-gradient(135deg, ${climateColor}10, ${climateColor}05)`,
     border: `1px solid ${climateColor}`,
@@ -149,7 +169,9 @@ export const ResidentCardContent = styled(CardContent)(() => ({
   padding: theme.spacing(3),
 }));
 
-export const ResidentName = styled(Typography)<{ climateColor: string }>(
+export const ResidentName = styled(Typography, {
+  shouldForwardProp: (prop) => prop !== 'climateColor',
+})<{ climateColor: string }>(
   ({ climateColor }) => ({
     fontSize: "28px",
     fontWeight: 700,
@@ -163,7 +185,9 @@ export const ResidentInfoStack = styled(Stack)(() => ({
   marginBottom: theme.spacing(3),
 }));
 
-export const SubsectionTitle = styled(Typography)<{ climateColor: string }>(
+export const SubsectionTitle = styled(Typography, {
+  shouldForwardProp: (prop) => prop !== 'climateColor',
+})<{ climateColor: string }>(
   ({ climateColor }) => ({
     fontSize: "18px",
     fontWeight: 600,
@@ -173,7 +197,9 @@ export const SubsectionTitle = styled(Typography)<{ climateColor: string }>(
   })
 );
 
-export const AdditionalInfoItem = styled(Box)<{ climateColor: string }>(
+export const AdditionalInfoItem = styled(Box, {
+  shouldForwardProp: (prop) => prop !== 'climateColor',
+})<{ climateColor: string }>(
   ({ climateColor }) => ({
     background: `linear-gradient(135deg, ${climateColor}08, ${climateColor}03)`,
     border: `1px solid ${climateColor}20`,
@@ -196,7 +222,9 @@ export const AdditionalInfoList = styled(Stack)(() => ({
   gap: theme.spacing(1),
 }));
 
-export const AdditionalInfoName = styled(Typography)<{ climateColor: string }>(
+export const AdditionalInfoName = styled(Typography, {
+  shouldForwardProp: (prop) => prop !== 'climateColor',
+})<{ climateColor: string }>(
   ({ climateColor }) => ({
     fontSize: "16px",
     fontWeight: 600,
